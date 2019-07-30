@@ -60,7 +60,7 @@ def updateRow(isHorizontal, r):
         for i in range(n):
             isY[i] = isY[i] and ps[i] == 1
             isN[i] = isN[i] and ps[i] == -1
-    _ret = row
+    _ret = row[:]
     for i in range(n):
         if isY[i]: _ret[i] = 1
         if isN[i]: _ret[i] = -1
@@ -98,5 +98,6 @@ def solve():
     while any([0 in x for x in screen]):
         updateScr()
     drawScr("■  ")
+
 
 solve()
